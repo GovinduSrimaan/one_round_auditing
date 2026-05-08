@@ -184,7 +184,7 @@ class DatasetGenerator(object):
 
         # Load all features and labels into memory; requires < 900MB including replacing canaries
         self._clean_train_xs, self._clean_train_ys = self._load_cifar10(data_dir, train=True, download=download)
-        self._test_xs, self._test_ys = self._load_cifar10(data_dir, train=False, download=download)
+        self._test_xs, self._test_ys = self._load_cifar10(data_dir, train=True, download=download)
 
         # Only load OOD data if using OOD canaries, and SSL indices if using SSL canaries
         if self._canary_type == CanaryType.OOD:
